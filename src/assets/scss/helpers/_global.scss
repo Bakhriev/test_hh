@@ -1,0 +1,21 @@
+@media (prefers-reduced-motion: no-preference) {
+	html {
+		scroll-behavior: smooth;
+	}
+}
+
+body {
+	font: 400 14px/1.15 var(--font-family);
+	color: var(--primary);
+
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+.app {
+	display: flex;
+	flex-direction: column;
+
+	min-height: 100vh;
+
+	overflow: hidden;
+}
