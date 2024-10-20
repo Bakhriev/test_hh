@@ -1,8 +1,10 @@
 const sidebar = () => {
 	const sidebar = document.querySelector('.sidebar');
-	const expandedElements = sidebar.querySelectorAll('[data-expanded]');
 	const collapseBtn = document.querySelector('[data-collapse="sidebar"]');
 	const burger = document.querySelector('.burger');
+
+	// Inside sidebar
+	const expandedElements = sidebar.querySelectorAll('[data-expanded]');
 
 	collapseBtn.addEventListener('click', () => {
 		hide();
@@ -41,22 +43,17 @@ const dropdown = () => {
 	dropdowns.forEach(dropdown => {
 		const btn = dropdown.querySelector('[data-toggle]');
 		const subMenu = dropdown.querySelector('[data-submenu]');
+		const height = subMenu.scrollHeight;
 
 		btn.addEventListener('click', () => {
-			if (dropdown.dataset.expanded !== 'true') {
-				const height = subMenu.scrollHeight;
+			btn.classList.toggle('active');
 
-				btn.classList.toggle('active');
-
-				if (subMenu.clientHeight) {
-					subMenu.style.height = '0';
-					subMenu.classList.remove('active');
-					dropdown.dataset.visible = 'false';
-				} else {
-					subMenu.classList.add('active');
-					subMenu.style.height = `${height}px`;
-					dropdown.dataset.visible = 'true';
-				}
+			if (subMenu.clientHeight) {
+				subMenu.style.height = '0';
+				dropdown.dataset.visible = 'false';
+			} else {
+				subMenu.style.height = `${height}px`;
+				dropdown.dataset.visible = 'true';
 			}
 		});
 	});
