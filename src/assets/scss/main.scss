@@ -11,5 +11,66 @@
 @import './helpers/global';
 
 // components
+@import './components/logo';
+@import './components/dropdown';
+@import './components/menu';
+@import './components/project';
+
+//
 @import './components/sidebar';
 @import './components/header';
+
+.refresh {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	font-size: 12px;
+
+	&__btn {
+		width: 32px;
+		height: 32px;
+
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
+
+		background-color: #fff;
+
+		transition: background-color 150ms ease-in-out;
+
+		@include hover {
+			background-color: #f2f8fe;
+		}
+
+		&:active {
+			scale: 0.97;
+			background-color: #f2f8fe;
+		}
+	}
+}
+
+.btn {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	padding: 4px 16px;
+
+	border-radius: 4px;
+
+	background-color: #f2f8fe;
+	transition: background-color 150ms ease-in-out;
+
+	@include hover {
+		background-color: #dfefff;
+	}
+
+	&:active {
+		scale: 0.99;
+		background-color: #c3dbf3;
+	}
+}
+.btn-reset {
+}

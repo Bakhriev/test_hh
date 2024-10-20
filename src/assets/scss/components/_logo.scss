@@ -1,0 +1,20 @@
+.logo-container {
+	flex-shrink: 0;
+}
+
+.logo,
+.pre-logo {
+	display: block;
+}
+
+.logo {
+	&[data-expanded='true'] {
+		display: none;
+	}
+}
+
+.pre-logo {
+	&[data-expanded='false'] {
+		display: none;
+	}
+}

@@ -1,0 +1,48 @@
+.sidebar {
+	width: 318px;
+	padding: 20px;
+
+	border-right: 1px solid #e5e5ea;
+	background-color: #fff;
+
+	&[data-expanded='true'] {
+		width: 76px;
+	}
+
+	&__header {
+		margin-bottom: 32px;
+
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&[data-expanded='true'] {
+			justify-content: center;
+		}
+	}
+
+	&__collapse-btn {
+		padding: 4px;
+
+		transition: background-color 150ms ease-in-out;
+		border-radius: 4px;
+
+		&[data-expanded='true'] {
+			display: none;
+		}
+
+		@include hover {
+			background-color: rgba(0, 0, 0, 0.1);
+		}
+
+		&:active {
+			scale: 0.97;
+		}
+	}
+
+	&__body {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+	}
+}

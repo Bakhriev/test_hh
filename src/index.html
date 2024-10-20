@@ -3,8 +3,290 @@
 	@include('./template/_head.html')
 	<body>
 		<div class="app">
-			<div class="sidebar" aria-expanded="false"></div>
-			<header class="header"></header>
+			<div class="sidebar" data-expanded="false">
+				<div class="sidebar__header" data-expanded="false">
+					<div class="logo-container">
+						<a href="/" class="logo" data-expanded="false">
+							<img
+								width="54"
+								height="23"
+								src="./assets/img/svg/logo.svg"
+								alt="logo" />
+						</a>
+
+						<a href="/" class="pre-logo" data-expanded="false">
+							<img
+								width="16"
+								height="23"
+								src="./assets/img/svg/pre-logo.svg"
+								alt="logo" />
+						</a>
+					</div>
+
+					<button
+						class="sidebar__collapse-btn btn-reset"
+						data-collapse="sidebar"
+						data-expanded="false">
+						<svg width="16" height="16">
+							<use href="./assets/img/svg/sprite.svg#arrow_back"></use>
+						</svg>
+					</button>
+				</div>
+				<div class="sidebar__body">
+					<ul class="menu list-reset">
+						<li>
+							<a href="#" class="menu-link" data-expanded="false">
+								<svg width="20" height="20">
+									<use
+										href="./assets/img/svg/sprite.svg#screen_search_desktop"></use>
+								</svg>
+
+								<span>Аналитика проекта</span>
+							</a>
+						</li>
+						<!-- Dropdown -->
+						<li>
+							<div
+								class="dropdown"
+								data-expanded="false"
+								data-dropdown
+								data-visible="false">
+								<button
+									class="dropdown__btn btn-reset"
+									data-expanded="false"
+									data-toggle>
+									<svg width="20" height="20">
+										<use
+											href="./assets/img/svg/sprite.svg#tool_with_arrows"></use>
+									</svg>
+
+									<span>Позиции из Я.Вебмастера</span>
+
+									<svg class="dropdown__btn-icon" width="16" height="16">
+										<use
+											href="./assets/img/svg/sprite.svg#arrow_dropdown"></use>
+									</svg>
+								</button>
+
+								<ul
+									class="dropdown__submenu list-reset"
+									data-expanded="false"
+									data-submenu>
+									<li class="dropdown__item">
+										<a href="#" class="dropdown__link">
+											<span>Запросы Я.Вебмастер</span>
+										</a>
+									</li>
+
+									<li class="dropdown__item">
+										<a href="#" class="dropdown__link">
+											<span>URLs Я.Вебмастер</span>
+										</a>
+									</li>
+								</ul>
+
+								<div class="dropdown__popup" data-expanded="false">
+									<a href="#" class="dropdown__popup-link">Ключевые слова</a>
+									<a href="#" class="dropdown__popup-link">URLs</a>
+								</div>
+							</div>
+						</li>
+
+						<li>
+							<a href="#" class="menu-link" data-expanded="false">
+								<svg width="20" height="20">
+									<use href="./assets/img/svg/sprite.svg#search_box"></use>
+								</svg>
+
+								<span>Съем позиций (Live/XML)</span>
+							</a>
+						</li>
+					</ul>
+
+					<div class="divider"></div>
+
+					<a href="#" class="menu-link" data-expanded="false">
+						<svg width="20" height="20">
+							<use href="./assets/img/svg/sprite.svg#grid_view"></use>
+						</svg>
+
+						<span>Мои проекты</span>
+					</a>
+				</div>
+			</div>
+
+			<div class="content">
+				<header class="header">
+					<div class="header__inner">
+						<div class="header__left">
+							<button class="burger btn-reset">
+								<svg width="16" height="12">
+									<use href="./assets/img/svg/sprite.svg#burger"></use>
+								</svg>
+							</button>
+
+							<div class="header__inner-wrapper">
+								<div class="project">
+									<button class="project__btn btn-reset">
+										<span>Проект 1</span>
+
+										<svg class="project__btn-icon" width="16" height="16">
+											<use
+												href="./assets/img/svg/sprite.svg#arrow_dropdown"></use>
+										</svg>
+									</button>
+
+									<div class="project__dropdown-wrapper">
+										<div class="project__dropdown">
+											<div class="folder" data-dropdown data-visible="false">
+												<button class="folder__btn btn-reset" data-toggle>
+													<svg width="20" height="20">
+														<use
+															href="./assets/img/svg/sprite.svg#folder"></use>
+													</svg>
+
+													<span>Папка 1</span>
+												</button>
+
+												<div class="folder__submenu" data-submenu>
+													<button class="folder__select active btn-reset">
+														<span>Проект 1</span>
+
+														<svg
+															class="folder__select-icon"
+															width="16"
+															height="16">
+															<use
+																href="./assets/img/svg/sprite.svg#link"></use>
+														</svg>
+													</button>
+
+													<button class="folder__select btn-reset">
+														<span>Проект 2</span>
+
+														<svg
+															class="folder__select-icon"
+															width="16"
+															height="16">
+															<use
+																href="./assets/img/svg/sprite.svg#link"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+
+											<div class="folder" data-dropdown data-visible="false">
+												<button class="folder__btn btn-reset" data-toggle>
+													<svg width="20" height="20">
+														<use
+															href="./assets/img/svg/sprite.svg#folder"></use>
+													</svg>
+
+													<span>Папка 1</span>
+												</button>
+
+												<div class="folder__submenu" data-submenu>
+													<button
+														class="folder__select btn-reset"
+														data-selected="true">
+														<span>Проект 1</span>
+
+														<svg
+															class="folder__select-icon"
+															width="16"
+															height="16">
+															<use
+																href="./assets/img/svg/sprite.svg#link"></use>
+														</svg>
+													</button>
+
+													<button class="folder__select btn-reset">
+														<span>Проект 2</span>
+
+														<svg
+															class="folder__select-icon"
+															width="16"
+															height="16">
+															<use
+																href="./assets/img/svg/sprite.svg#link"></use>
+														</svg>
+													</button>
+												</div>
+											</div>
+
+											<button class="folder__select btn-reset">
+												<span>Проект 3</span>
+
+												<svg class="folder__select-icon" width="16" height="16">
+													<use href="./assets/img/svg/sprite.svg#link"></use>
+												</svg>
+											</button>
+										</div>
+									</div>
+								</div>
+
+								<div class="refresh">
+									<button class="refresh__btn btn-reset">
+										<svg width="24" height="24">
+											<use href="./assets/img/svg/sprite.svg#refresh"></use>
+										</svg>
+									</button>
+
+									<span
+										>Обновлено <span>18.10.2024</span> в
+										<span>10:11</span></span
+									>
+								</div>
+							</div>
+
+							<button class="btn btn-reset">
+								<svg width="24" height="24">
+									<use href="./assets/img/svg/sprite.svg#add"></use>
+								</svg>
+
+								<span>Новый проект</span>
+							</button>
+						</div>
+						<div class="header__right">
+							<div class="user">
+								<button class="user__btn btn-reset">
+									<svg width="24" height="24">
+										<use href="./assets/img/svg/sprite.svg#user"></use>
+									</svg>
+								</button>
+
+								<div class="user__dropdown">
+									<button class="action-btn btn-reset">
+										<svg width="20" height="20">
+											<use href="./assets/img/svg/sprite.svg#settings"></use>
+										</svg>
+
+										<span>Настройки аккаунта</span>
+									</button>
+
+									<button class="action-btn btn-reset">
+										<svg width="20" height="20">
+											<use href="./assets/img/svg/sprite.svg#key"></use>
+										</svg>
+
+										<span>Управление доступами</span>
+									</button>
+
+									<div class="divider"></div>
+
+									<button class="action-btn btn-reset">
+										<svg width="20" height="20">
+											<use href="./assets/img/svg/sprite.svg#move_item"></use>
+										</svg>
+
+										<span class="text-red">Выйти из аккаунта</span>
+									</button>
+								</div>
+							</div>
+						</div>
+					</div>
+				</header>
+			</div>
 		</div>
 		@include('./template/_scripts.html')
 	</body>

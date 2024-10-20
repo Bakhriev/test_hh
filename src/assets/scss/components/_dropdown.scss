@@ -1,0 +1,157 @@
+.dropdown {
+	position: relative;
+
+	&:hover {
+		.dropdown__popup {
+			opacity: 1;
+			visibility: visible;
+			transition:
+				opacity 150ms ease-in-out,
+				visibility 150ms ease-in-out;
+		}
+	}
+
+	&__btn {
+		&.active {
+			font-weight: 500;
+			color: var(--primary);
+
+			& > .dropdown__btn-icon {
+				rotate: -180deg;
+			}
+		}
+
+		display: flex;
+		align-items: center;
+		gap: 8px;
+
+		padding: 8px;
+
+		color: #747474;
+
+		transition:
+			color 150ms ease-in-out,
+			background-color 150ms ease-in-out;
+
+		svg {
+			flex-shrink: 0;
+		}
+
+		@include hover {
+			color: var(--primary);
+		}
+
+		&[data-expanded='true'] {
+			border-radius: 4px;
+
+			@include hover {
+				background-color: #f7f7f7;
+			}
+
+			& > * {
+				&:not(:first-child) {
+					display: none;
+				}
+			}
+		}
+
+		&:focus-visible ~ .dropdown__popup {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__btn-icon {
+		transition: rotate 150ms ease-in-out;
+	}
+
+	&__submenu {
+		margin-top: 4px;
+
+		&[data-expanded='true'] {
+			display: none;
+		}
+	}
+
+	&__link {
+		display: block;
+
+		padding: 8px 8px 8px 44px;
+
+		font-weight: 500;
+		color: #747474;
+
+		border-radius: 4px;
+
+		transition:
+			color 150ms ease-in-out,
+			background-color 150ms ease-in-out;
+
+		@include hover {
+			color: var(--primary);
+			background-color: #f7f7f7;
+		}
+	}
+
+	&__popup {
+		position: absolute;
+		z-index: 2;
+		width: 210px;
+		top: 8px;
+		left: calc(100% + 8px);
+
+		padding: 8px;
+		border: 1px solid #e5e5ea;
+		border-radius: 8px;
+		box-shadow: -5px 5px 15px -10px rgba(141, 141, 141, 0.6);
+		background: #fff;
+
+		opacity: 0;
+		visibility: hidden;
+
+		transition:
+			opacity 150ms ease-in-out,
+			visibility 150ms ease-in-out;
+		transition-delay: 300ms;
+
+		&[data-expanded='false'] {
+			display: none;
+		}
+
+		&:focus-within {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	&__popup-link {
+		display: block;
+		padding: 8px;
+
+		transition: background-color 150ms ease-in-out;
+		color: var(--primary);
+
+		@include hover {
+			background-color: #f7f7f7;
+		}
+	}
+}
+
+[data-dropdown] {
+	&[data-visible='true'] {
+		& > [data-submenu] {
+			opacity: 1;
+			visibility: visible;
+		}
+	}
+
+	& > [data-submenu] {
+		height: 0;
+		transition:
+			height 150ms ease-in-out,
+			visibility 150ms ease-in-out;
+
+		overflow: hidden;
+		visibility: hidden;
+	}
+}
