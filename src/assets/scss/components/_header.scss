@@ -94,24 +94,33 @@
 	}
 }
 
-.action-btn {
-	display: inline-flex;
+.refresh {
+	display: flex;
 	align-items: center;
 	gap: 8px;
 
-	padding: 8px;
+	font-size: 12px;
 
-	border-radius: 4px;
-	background-color: #fff;
+	&__btn {
+		width: 32px;
+		height: 32px;
 
-	transition: background-color 150ms ease-in-out;
+		display: flex;
+		align-items: center;
+		justify-content: center;
+		border-radius: 4px;
 
-	svg {
-		flex-shrink: 0;
-	}
+		background-color: #fff;
 
-	@include hover {
-		background-color: #f7f7f7;
-		font-weight: 500;
+		transition: background-color 150ms ease-in-out;
+
+		@include hover {
+			background-color: #f2f8fe;
+		}
+
+		&:active {
+			scale: 0.97;
+			background-color: #f2f8fe;
+		}
 	}
 }

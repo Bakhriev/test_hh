@@ -1,0 +1,43 @@
+.btn {
+	display: flex;
+	align-items: center;
+	gap: 8px;
+
+	padding: 4px 16px;
+
+	border-radius: 4px;
+
+	background-color: #f2f8fe;
+	transition: background-color 150ms ease-in-out;
+
+	@include hover {
+		background-color: #dfefff;
+	}
+
+	&:active {
+		scale: 0.99;
+		background-color: #c3dbf3;
+	}
+}
+
+.action-btn {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+
+	padding: 8px;
+
+	border-radius: 4px;
+	background-color: #fff;
+
+	transition: background-color 150ms ease-in-out;
+
+	svg {
+		flex-shrink: 0;
+	}
+
+	@include hover {
+		background-color: #f7f7f7;
+		font-weight: 500;
+	}
+}
