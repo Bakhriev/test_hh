@@ -119,7 +119,35 @@ const project = () => {
 	window.addEventListener('keydown', handleClickEscape);
 };
 
+const refresh = () => {
+	const refresh = document.querySelector('.refresh');
+	const refreshBtn = refresh.querySelector('.refresh__btn');
+	const refreshDate = refresh.querySelector('[data-refresh-date]');
+	const refreshTime = refresh.querySelector('[data-refresh-time]');
+
+	const setDate = () => {
+		const { currentDate, currentTime } = getCurrentDateAndTime();
+
+		refreshDate.textContent = currentDate;
+		refreshTime.textContent = currentTime;
+	};
+
+	const getCurrentDateAndTime = () => {
+		const date = new Date();
+
+		const currentDate = date.toLocaleDateString();
+		const currentTime = date.toLocaleTimeString().slice(0, 5);
+
+		return { currentDate, currentTime };
+	};
+
+	setDate();
+
+	refreshBtn.addEventListener('click', setDate);
+};
+
 sidebar();
 dropdown();
 userDropdown();
 project();
+refresh();
